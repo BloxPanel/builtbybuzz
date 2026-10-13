@@ -1,0 +1,41 @@
+<!-- Generated with Onyx Studio | https://builtbybuzz.dev -->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BuiltByBuzz</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#172033;color:white;font-family:system-ui,sans-serif}
+section{width:100%;overflow:hidden}.onyx-section{position:relative;width:1000px;margin:auto;transform-origin:top center}
+@media(max-width:1000px){.onyx-section{margin-left:0;margin-right:0;transform-origin:top left}}
+</style>
+</head>
+<body>
+<section style="background:#172033"><div class="onyx-section" style="height:765px"><h2 style="position:absolute;left:0px;top:0px;width:150px;height:49px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:19px;padding:12px;text-align:left;overflow-wrap:anywhere;font-family:Georgia, serif;font-weight:700;font-style:normal;text-decoration:none;border-radius:0px;border:0px solid #818cf8;opacity:1;margin:0;line-height:1.2">BuiltByBuzz</h2>
+<p style="position:absolute;left:331px;top:96px;width:338px;height:49px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:16px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:100px;border:4px solid #818cf8;opacity:1;margin:0;line-height:1.5;white-space:pre-wrap">INDEPENDENT DEVELOPMENT STUDIO</p>
+<a href="#" style="position:absolute;left:929px;top:0px;width:60px;height:37px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:#172033;font-size:10px;padding:12px;text-align:left;overflow-wrap:anywhere;font-family:Georgia, serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:8px;border:0px solid #818cf8;opacity:1;display:flex;align-items:center;justify-content:center;text-decoration:none">About</a>
+<a href="#" style="position:absolute;left:865px;top:0px;width:69px;height:37px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:#172033;font-size:10px;padding:12px;text-align:left;overflow-wrap:anywhere;font-family:Georgia, serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:8px;border:0px solid #818cf8;opacity:1;display:flex;align-items:center;justify-content:center;text-decoration:none">Projects</a>
+<h2 style="position:absolute;left:100px;top:148px;width:800px;height:90px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:42px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:700;font-style:normal;text-decoration:none;border-radius:0px;border:0px solid #818cf8;opacity:1;margin:0;line-height:1.2">Software built for everyone.</h2>
+<p style="position:absolute;left:100px;top:208px;width:800px;height:100px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:16px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:0px;border:0px solid #818cf8;opacity:1;margin:0;line-height:1.5;white-space:pre-wrap">From developer tools to custom software, BuiltByBuzz turns ideas into practical, accessible technology. Built independently, driven by curiosity, and designed with the people who use it in mind.</p>
+<a href="#" style="position:absolute;left:319px;top:286.5px;width:174px;height:43px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:#6366f1;font-size:16px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:8px;border:0px solid #818cf8;opacity:1;display:flex;align-items:center;justify-content:center;text-decoration:none">Explore Projects →</a>
+<div aria-hidden="true" style="position:absolute;left:0px;top:384px;width:1000px;height:23px;box-sizing:border-box;overflow:hidden;background:transparent;overflow:visible;opacity:1"><div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:2px;background:#94a3b8;border-radius:0px"></div></div>
+<a href="#" style="position:absolute;left:533px;top:286.5px;width:174px;height:43px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:16px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:8px;border:2px solid #818cf8;opacity:1;display:flex;align-items:center;justify-content:center;text-decoration:none">About BuiltByBuzz</a></div></section>
+<section style="background:#172033"><div class="onyx-section" style="height:440px"></div></section>
+<script>
+(function(){
+  const width=1000;
+  function resize(){
+    const scale=Math.min(1,document.documentElement.clientWidth/width);
+    document.querySelectorAll('.onyx-section').forEach(section=>{
+      const designHeight=parseFloat(section.style.height);
+      section.style.transform='scale('+scale+')';
+      section.parentElement.style.height=(designHeight*scale)+'px';
+    });
+  }
+  window.addEventListener('resize',resize);
+  resize();
+})();
+</script>
+</body>
+</html>
