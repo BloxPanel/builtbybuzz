@@ -1,0 +1,698 @@
+<!-- Generated with Onyx Studio | https://builtbybuzz.dev -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Onyx Studio is a free, open-source visual development platform for building websites and Discord embeds.">
+  <title>About Onyx Studio</title>
+
+  <style>
+    :root {
+      --background: #101827;
+      --section: #172033;
+      --card: #222d46;
+      --purple: #6366f1;
+      --lavender: #a5b4fc;
+      --white: #ffffff;
+      --secondary: #cbd5e1;
+      --muted: #94a3b8;
+      --border: #3f4e6c;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--white);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(1100px, 92%);
+      margin: auto;
+    }
+
+    .icon {
+      width: 30px;
+      height: 30px;
+      object-fit: contain;
+    }
+
+    header {
+      background: var(--section);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 75px;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 19px;
+      font-weight: 700;
+    }
+
+    .brand-icon {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      background: var(--purple);
+      border-radius: 12px;
+    }
+
+    .brand-icon img {
+      width: 27px;
+      filter: brightness(0) invert(1);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      color: var(--secondary);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover,
+    footer a:hover {
+      color: var(--lavender);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 105px 0 65px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 18px;
+      background: #29274f;
+      border: 1px solid #4e438b;
+      border-radius: 100px;
+      color: var(--lavender);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.12;
+      margin: 25px auto;
+      letter-spacing: -2px;
+    }
+
+    .hero p {
+      color: var(--secondary);
+      max-width: 720px;
+      margin: 0 auto 30px;
+      font-size: 18px;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 24px;
+      border-radius: 9px;
+      font-weight: 700;
+      font-size: 15px;
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .btn-primary {
+      background: var(--purple);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #4f46e5;
+    }
+
+    .btn-outline {
+      border: 1px solid #67738e;
+      background: transparent;
+    }
+
+    .hero-note {
+      margin-top: 20px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .preview {
+      padding-bottom: 95px;
+    }
+
+    .preview-frame {
+      border: 1px solid #43547a;
+      background: #222e47;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 25px 80px #0006;
+    }
+
+    .preview-header {
+      height: 45px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 0 18px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .dot {
+      width: 11px;
+      height: 11px;
+      border-radius: 50%;
+    }
+
+    .red { background: #fb7185; }
+    .yellow { background: #fbbf24; }
+    .green { background: #4ade80; }
+
+    .preview-title {
+      margin-left: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .preview-image {
+      width: 100%;
+      display: block;
+      min-height: 220px;
+      object-fit: contain;
+      background: var(--section);
+    }
+
+    .preview-placeholder {
+      min-height: 360px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 40px;
+      color: var(--muted);
+    }
+
+    .preview-caption {
+      text-align: center;
+      color: var(--muted);
+      font-size: 13px;
+      margin-top: 15px;
+    }
+
+    section.content-section {
+      padding: 90px 0;
+    }
+
+    .alt-section {
+      background: var(--section);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 45px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.2;
+      margin: 0 0 15px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin: 18px 0 10px;
+    }
+
+    .card p {
+      color: var(--secondary);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 35px;
+    }
+
+    .feature {
+      padding: 15px;
+    }
+
+    .feature h3 {
+      margin: 15px 0 8px;
+      font-size: 19px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 15px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .step-number {
+      color: var(--lavender);
+      font-size: 42px;
+      font-weight: 800;
+    }
+
+    .step h3 {
+      margin: 10px 0;
+      font-size: 21px;
+    }
+
+    .step p {
+      color: var(--secondary);
+      margin: 0;
+    }
+
+    .faq-list {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      gap: 14px;
+    }
+
+    details {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 700;
+      list-style-position: inside;
+    }
+
+    details p {
+      color: var(--secondary);
+      margin: 15px 0 0;
+    }
+
+    .cta {
+      background: #25284e;
+      text-align: center;
+      padding: 90px 20px;
+    }
+
+    .cta h2 {
+      font-size: clamp(30px, 5vw, 45px);
+      margin: 0 0 15px;
+    }
+
+    .cta p {
+      color: var(--secondary);
+      margin: 0 auto 30px;
+      max-width: 600px;
+    }
+
+    footer {
+      padding: 35px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .footer-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 700px) {
+      nav {
+        flex-wrap: wrap;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+
+      .hero {
+        padding-top: 65px;
+      }
+
+      .grid,
+      .feature-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      section.content-section {
+        padding: 65px 0;
+      }
+
+      .preview-placeholder {
+        min-height: 230px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav class="container">
+      <a class="brand" href="https://builtbybuzz.dev">
+        <span class="brand-icon">
+          <img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/panels-top-left.svg" alt="">
+        </span>
+        <span>Onyx Studio</span>
+      </a>
+
+      <div class="nav-links">
+        <a href="#studios">Studios</a>
+        <a href="#features">Features</a>
+        <a href="#faq">FAQ</a>
+        <a href="https://builtbybuzz.dev">BuiltByBuzz</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero container">
+      <div class="badge">✦ FREE &amp; OPEN SOURCE</div>
+
+      <h1>Build visually.<br>Create freely.</h1>
+
+      <p>
+        Onyx Studio is a free, browser-based creative development
+        platform. Design websites, build Discord embeds, and bring
+        your ideas to life with visual tools.
+      </p>
+
+      <div class="buttons">
+        <!-- Replace # with the live application URL -->
+        <a class="btn btn-primary" href="#">
+          Launch Studio ↗
+        </a>
+        <!-- Replace # with the GitHub repository URL -->
+        <a class="btn btn-outline" href="#">
+          View Source
+        </a>
+      </div>
+
+      <div class="hero-note">
+        No installation required. No subscription fees.
+      </div>
+    </section>
+
+    <!-- SCREENSHOT -->
+    <div class="preview container">
+      <div class="preview-frame">
+        <div class="preview-header">
+          <span class="dot red"></span>
+          <span class="dot yellow"></span>
+          <span class="dot green"></span>
+          <span class="preview-title">
+            Onyx Studio — Website Editor
+          </span>
+        </div>
+
+        <!-- Replace this placeholder with your R2-hosted screenshot -->
+        <div class="preview-placeholder">
+          <div>
+            <h2>Onyx Studio Preview</h2>
+            <p>Insert your editor screenshot here.</p>
+          </div>
+        </div>
+
+        <!-- Example:
+        <img
+          class="preview-image"
+          src="YOUR_R2_SCREENSHOT_URL"
+          alt="Onyx Studio Website Editor"
+        >
+        -->
+      </div>
+
+      <p class="preview-caption">
+        Design, customize, and export your projects visually.
+      </p>
+    </div>
+
+    <!-- STUDIOS -->
+    <section id="studios" class="content-section alt-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>One studio. Multiple possibilities.</h2>
+          <p>
+            Everything you need to start creating,
+            all in one place.
+          </p>
+        </div>
+
+        <div class="grid">
+          <article class="card">
+            <img
+              class="icon"
+              src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/monitor.svg"
+              alt=""
+            >
+            <h3>Website Studio</h3>
+            <p>
+              Visually design websites with draggable elements,
+              custom styling, reusable cards, and HTML export.
+              Save your project and continue working later.
+            </p>
+          </article>
+
+          <article class="card">
+            <img
+              class="icon"
+              src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/message-square.svg"
+              alt=""
+            >
+            <h3>Discord Studio</h3>
+            <p>
+              Create and customize Discord embeds using a visual
+              editor instead of writing embed data by hand.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section id="features" class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Made for creators, not just coders.</h2>
+          <p>
+            Spend less time wrestling with code and more time
+            bringing your ideas to life.
+          </p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/mouse-pointer-2.svg" alt="">
+            <h3>Visual Editing</h3>
+            <p>
+              Drag, resize, and customize elements directly
+              on your canvas.
+            </p>
+          </div>
+
+          <div class="feature">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/download.svg" alt="">
+            <h3>Export Your Work</h3>
+            <p>
+              Export website HTML or save your project
+              to continue editing later.
+            </p>
+          </div>
+
+          <div class="feature">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/undo-2.svg" alt="">
+            <h3>Undo &amp; Redo</h3>
+            <p>
+              Experiment confidently with editing history
+              and convenient keyboard shortcuts.
+            </p>
+          </div>
+
+          <div class="feature">
+            <img class="icon" src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/code-2.svg" alt="">
+            <h3>Open Source</h3>
+            <p>
+              Free software with source code available
+              under the MIT license.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="content-section alt-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>How it works</h2>
+          <p>From idea to creation in three simple steps.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">01</div>
+            <h3>Open</h3>
+            <p>Launch Onyx Studio in your browser.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">02</div>
+            <h3>Create</h3>
+            <p>Choose an editor and build your project.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">03</div>
+            <h3>Export</h3>
+            <p>Save or export your finished work.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="content-section">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Frequently asked questions</h2>
+        </div>
+
+        <div class="faq-list">
+          <details>
+            <summary>Is Onyx Studio free?</summary>
+            <p>
+              Yes! Onyx Studio is free and open source.
+            </p>
+          </details>
+
+          <details>
+            <summary>Do I need to install anything?</summary>
+            <p>
+              Nope! Onyx Studio runs in your browser.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I export my website?</summary>
+            <p>
+              Yes. Website Studio supports HTML export
+              and editable .onyx project files.
+            </p>
+          </details>
+
+          <details>
+            <summary>Can I use it for my own projects?</summary>
+            <p>
+              Yes! Onyx Studio is released under
+              the MIT license.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta">
+      <div class="container">
+        <h2>Your next idea starts here.</h2>
+        <p>
+          No subscriptions. No unnecessary complexity.
+          Just the tools to create.
+        </p>
+
+        <!-- Replace # with the live application URL -->
+        <a class="btn btn-primary" href="#">
+          Launch Onyx Studio ↗
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container footer-row">
+      <span>© 2026 BuiltByBuzz</span>
+      <span>Onyx Studio — A BuiltByBuzz Project</span>
+      <span>Free • Open Source • MIT Licensed</span>
+    </div>
+  </footer>
+
+</body>
+</html>
