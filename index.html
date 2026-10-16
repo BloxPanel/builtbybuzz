@@ -1,46 +1,529 @@
-<!-- Generated with Onyx Studio | https://builtbybuzz.dev -->
-<!doctype html>
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>BuiltByBuzz</title>
-<style>
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#172033;color:white;font-family:system-ui,sans-serif}
-section{width:100%;overflow:hidden}.onyx-section{position:relative;width:1000px;margin:0;transform-origin:top left}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BuiltByBuzz is an independent development studio creating accessible software, developer tools, and Discord applications.">
+  <meta name="theme-color" content="#172033">
+  <title>BuiltByBuzz | Independent Development Studio</title>
 
-</style>
+  <style>
+    :root {
+      --bg: #172033;
+      --card: #222d46;
+      --accent: #6366f1;
+      --accent-light: #a5b4fc;
+      --text: #ffffff;
+      --secondary: #cbd5e1;
+      --muted: #94a3b8;
+      --border: #465575;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: Inter, system-ui, -apple-system,
+        BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(100% - 40px, 1040px);
+      margin-inline: auto;
+    }
+
+    /* Navigation */
+
+    header {
+      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    }
+
+    nav {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      font-size: 20px;
+      font-weight: 750;
+      letter-spacing: -0.5px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      color: var(--secondary);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--accent-light);
+    }
+
+    /* Hero */
+
+    .hero {
+      padding: 75px 0 70px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      padding: 7px 16px;
+      border: 1px solid var(--accent-light);
+      border-radius: 999px;
+      color: var(--accent-light);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 22px 0 16px;
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 750;
+      line-height: 1.2;
+      letter-spacing: -1.5px;
+    }
+
+    .hero-description {
+      max-width: 650px;
+      margin: 0 auto;
+      color: var(--secondary);
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 650;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--accent);
+      color: white;
+    }
+
+    .button-primary:hover {
+      background: #4f46e5;
+    }
+
+    .button-outline {
+      border: 1px solid var(--accent-light);
+      color: white;
+    }
+
+    .button-outline:hover {
+      background: rgba(99, 102, 241, 0.12);
+    }
+
+    /* Projects */
+
+    .projects {
+      padding: 55px 0 65px;
+      border-top: 1px solid rgba(148, 163, 184, 0.25);
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 8px;
+      font-size: 27px;
+      font-weight: 750;
+      letter-spacing: -0.5px;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      max-width: 850px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 25px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      transition: border-color 0.2s, transform 0.2s;
+    }
+
+    .project-card:hover {
+      border-color: var(--accent-light);
+      transform: translateY(-3px);
+    }
+
+    .project-icon {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 16px;
+      background: rgba(99, 102, 241, 0.15);
+      border-radius: 10px;
+    }
+
+    .project-icon img {
+      width: 24px;
+      height: 24px;
+      filter: invert(76%) sepia(20%)
+        saturate(1128%) hue-rotate(197deg)
+        brightness(104%) contrast(98%);
+    }
+
+    .project-card h3 {
+      margin: 0 0 8px;
+      font-size: 19px;
+      line-height: 1.3;
+    }
+
+    .project-card p {
+      margin: 0 0 20px;
+      color: var(--secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .project-link {
+      margin-top: auto;
+      color: var(--accent-light);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    .project-link:hover {
+      text-decoration: underline;
+    }
+
+    /* About */
+
+    .about {
+      padding: 0 0 75px;
+    }
+
+    .about-card {
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 38px 35px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      text-align: center;
+    }
+
+    .about-card h2 {
+      margin: 0 0 14px;
+      font-size: 24px;
+      letter-spacing: -0.4px;
+    }
+
+    .about-card p {
+      max-width: 680px;
+      margin: 0 auto 22px;
+      color: var(--secondary);
+      font-size: 14px;
+      line-height: 1.8;
+    }
+
+    /* Footer */
+
+    footer {
+      border-top: 1px solid rgba(148, 163, 184, 0.15);
+      padding: 24px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .footer-inner a:hover {
+      color: var(--accent-light);
+    }
+
+    /* Mobile */
+
+    @media (max-width: 650px) {
+      .container {
+        width: min(100% - 32px, 1040px);
+      }
+
+      nav {
+        min-height: 62px;
+      }
+
+      .nav-links {
+        gap: 16px;
+        font-size: 12px;
+      }
+
+      .logo {
+        font-size: 18px;
+      }
+
+      .hero {
+        padding: 65px 0 55px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+      }
+
+      .projects {
+        padding: 45px 0 50px;
+      }
+
+      .project-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about {
+        padding-bottom: 55px;
+      }
+
+      .about-card {
+        padding: 28px 22px;
+      }
+
+      .about-card h2 {
+        font-size: 21px;
+      }
+
+      .footer-inner {
+        justify-content: center;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .button,
+      .project-card {
+        transition: none;
+      }
+    }
+  </style>
 </head>
+
 <body>
-<section style="background:#172033"><div class="onyx-section" style="height:1485px"><h2 style="position:absolute;left:0px;top:0px;width:150px;height:49px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:19px;padding:12px;text-align:left;overflow-wrap:anywhere;font-family:Georgia, serif;font-weight:700;font-style:normal;text-decoration:none;border-radius:0px;border:0px solid #818cf8;opacity:1;margin:0;line-height:1.2">BuiltByBuzz</h2>
-<p style="position:absolute;left:331px;top:96px;width:338px;height:49px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:16px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:100px;border:4px solid #818cf8;opacity:1;margin:0;line-height:1.5;white-space:pre-wrap">INDEPENDENT DEVELOPMENT STUDIO</p>
-<a href="#" style="position:absolute;left:929px;top:0px;width:60px;height:37px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:#172033;font-size:10px;padding:12px;text-align:left;overflow-wrap:anywhere;font-family:Georgia, serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:8px;border:0px solid #818cf8;opacity:1;display:flex;align-items:center;justify-content:center;text-decoration:none">About</a>
-<a href="#" style="position:absolute;left:865px;top:0px;width:69px;height:37px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:#172033;font-size:10px;padding:12px;text-align:left;overflow-wrap:anywhere;font-family:Georgia, serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:8px;border:0px solid #818cf8;opacity:1;display:flex;align-items:center;justify-content:center;text-decoration:none">Projects</a>
-<h2 style="position:absolute;left:100px;top:148px;width:800px;height:90px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:42px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:700;font-style:normal;text-decoration:none;border-radius:0px;border:0px solid #818cf8;opacity:1;margin:0;line-height:1.2">Software built for everyone.</h2>
-<p style="position:absolute;left:100px;top:208px;width:800px;height:100px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:16px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:0px;border:0px solid #818cf8;opacity:1;margin:0;line-height:1.5;white-space:pre-wrap">From developer tools to custom software, BuiltByBuzz turns ideas into practical, accessible technology. Built independently, driven by curiosity, and designed with the people who use it in mind.</p>
-<a href="#" style="position:absolute;left:315px;top:286.5px;width:174px;height:43px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:#6366f1;font-size:16px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:8px;border:0px solid #818cf8;opacity:1;display:flex;align-items:center;justify-content:center;text-decoration:none">Explore Projects →</a>
-<div aria-hidden="true" style="position:absolute;left:0px;top:384px;width:1000px;height:23px;box-sizing:border-box;overflow:hidden;background:transparent;overflow:visible;opacity:1"><div style="position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:2px;background:#94a3b8;border-radius:0px"></div></div>
-<a href="#" style="position:absolute;left:512px;top:286.5px;width:174px;height:43px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:16px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:8px;border:2px solid #818cf8;opacity:1;display:flex;align-items:center;justify-content:center;text-decoration:none">About BuiltByBuzz</a>
-<h2 style="position:absolute;left:353px;top:423px;width:294px;height:59px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:30px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:700;font-style:normal;text-decoration:none;border-radius:0px;border:0px solid #818cf8;opacity:1;margin:0;line-height:1.2">Featured Projects</h2>
-<p style="position:absolute;left:247px;top:482px;width:506px;height:43px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:16px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:0px;border:0px solid #818cf8;opacity:1;margin:0;line-height:1.5;white-space:pre-wrap">Explore the software, tools, and experiments built at BuiltByBuzz.</p>
-<article style="position:absolute;left:102px;top:538px;width:300px;height:228px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:#222d46;font-size:22px;padding:22px;text-align:left;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:700;font-style:normal;text-decoration:none;border-radius:16px;border:2px solid #465575;opacity:1;display:flex;flex-direction:column;gap:12px"><img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/panels-top-left.svg" alt="" style="width:42px;height:42px;object-fit:contain;flex-shrink:0" /><strong style="font-size:inherit;font-weight:700;line-height:1.2">Onyx Studio</strong><p style="margin:0;font-size:15px;font-weight:400;line-height:1.5;white-space:pre-wrap;color:#cbd5e1">A free, open-source visual development platform for creating websites and Discord embeds.</p><a href="/onyx-studio" style="margin-top:auto;font-size:14px;font-weight:600;color:#a5b4fc;text-decoration:none">Explore project &rarr;</a></article>
-<article style="position:absolute;left:599px;top:538px;width:300px;height:228px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:#222d46;font-size:22px;padding:22px;text-align:left;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:700;font-style:normal;text-decoration:none;border-radius:16px;border:2px solid #465575;opacity:1;display:flex;flex-direction:column;gap:9px"><img src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/shield-check.svg" alt="" style="width:42px;height:42px;object-fit:contain;flex-shrink:0" /><strong style="font-size:inherit;font-weight:700;line-height:1.2">Onyx Security</strong><p style="margin:0;font-size:15px;font-weight:400;line-height:1.5;white-space:pre-wrap;color:#cbd5e1">Discord moderation, security, and server management tools built to make communities easier to run.</p><a href="/onyx-security" style="margin-top:auto;font-size:14px;font-weight:600;color:#a5b4fc;text-decoration:none">Explore project &rarr;</a></article>
-<article style="position:absolute;left:72.5px;top:839px;width:855px;height:214px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:#222d46;font-size:22px;padding:22px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:700;font-style:normal;text-decoration:none;border-radius:16px;border:2px solid #465575;opacity:1;display:flex;flex-direction:column;gap:12px"><strong style="font-size:inherit;font-weight:700;line-height:1.2">Built with purpose. Driven by curiosity.</strong><p style="margin:0;font-size:15px;font-weight:400;line-height:1.5;white-space:pre-wrap;color:#cbd5e1">BuiltByBuzz is an independent development studio focused on turning ideas into useful software. Whether it&#39;s a tool for developers, a solution for communities, or something entirely new, the goal is simple: build things worth using.</p></article>
-<a href="/more" style="position:absolute;left:401.5px;top:1006px;width:197px;height:29px;box-sizing:border-box;overflow:hidden;color:#ffffff;background:transparent;font-size:12px;padding:12px;text-align:center;overflow-wrap:anywhere;font-family:Arial, sans-serif;font-weight:400;font-style:normal;text-decoration:none;border-radius:8px;border:2px solid #818cf8;opacity:1;display:flex;align-items:center;justify-content:center;text-decoration:none">More About BuiltByBuzz →</a></div></section>
-<script>
-(function(){
-  const width=1000;
-  function resize(){
-    const scale=document.documentElement.clientWidth/width;
-    document.querySelectorAll('.onyx-section').forEach(section=>{
-      const designHeight=parseFloat(section.style.height);
-      section.style.transform='scale('+scale+')';
-      section.parentElement.style.height=(designHeight*scale)+'px';
-    });
-  }
-  window.addEventListener('resize',resize);
-  resize();
-})();
-</script>
+
+  <!-- Navigation -->
+
+  <header>
+    <nav class="container">
+      <a class="logo" href="/">BuiltByBuzz</a>
+
+      <div class="nav-links">
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- Hero -->
+
+    <section class="hero">
+      <div class="container">
+
+        <span class="eyebrow">
+          Independent Development Studio
+        </span>
+
+        <h1>Software built for everyone.</h1>
+
+        <p class="hero-description">
+          From developer tools to custom software,
+          BuiltByBuzz turns ideas into practical,
+          accessible technology. Built independently,
+          driven by curiosity, and designed with
+          the people who use it in mind.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="button button-primary">
+            Explore Projects &rarr;
+          </a>
+
+          <a href="#about" class="button button-outline">
+            About BuiltByBuzz
+          </a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+
+    <section id="projects" class="projects">
+      <div class="container">
+
+        <div class="section-heading">
+          <h2>Featured Projects</h2>
+          <p>
+            Explore the software, tools, and experiments
+            built at BuiltByBuzz.
+          </p>
+        </div>
+
+        <div class="project-grid">
+
+          <!-- Onyx Studio -->
+
+          <article class="project-card">
+
+            <div class="project-icon">
+              <img
+                src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/panels-top-left.svg"
+                alt=""
+              >
+            </div>
+
+            <h3>Onyx Studio</h3>
+
+            <p>
+              A free, open-source visual development
+              platform for creating websites and
+              Discord embeds.
+            </p>
+
+            <a class="project-link" href="/onyx-studio">
+              Explore project &rarr;
+            </a>
+
+          </article>
+
+          <!-- Onyx Security -->
+
+          <article class="project-card">
+
+            <div class="project-icon">
+              <img
+                src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/shield-check.svg"
+                alt=""
+              >
+            </div>
+
+            <h3>Onyx Security</h3>
+
+            <p>
+              Discord moderation, security, and server
+              management tools built to make communities
+              easier to run.
+            </p>
+
+            <a class="project-link" href="/onyx-security">
+              Explore project &rarr;
+            </a>
+
+          </article>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- About -->
+
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="about-card">
+
+          <h2>
+            Built with purpose. Driven by curiosity.
+          </h2>
+
+          <p>
+            BuiltByBuzz is an independent development studio
+            focused on turning ideas into useful software.
+            Whether it's a tool for developers, a solution
+            for communities, or something entirely new,
+            the goal is simple: build things worth using.
+          </p>
+
+          <a href="/more" class="button button-outline">
+            More About BuiltByBuzz &rarr;
+          </a>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+
+  <footer>
+    <div class="container footer-inner">
+      <span>&copy; 2026 BuiltByBuzz</span>
+      <span>Independent Development Studio</span>
+      <a href="#projects">Back to Projects &uarr;</a>
+    </div>
+  </footer>
+
 </body>
 </html>
