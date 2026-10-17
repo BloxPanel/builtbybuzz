@@ -6,6 +6,10 @@
   </url>
 
   <url>
-    <loc>https://builtbybuzz.dev/hosting</loc>
+    <loc>https://builtbybuzz.dev/hosting/</loc>
+  </url>
+
+  <url>
+    <loc>https://builtbybuzz.dev/onyx-studio/</loc>
   </url>
 </urlset>
