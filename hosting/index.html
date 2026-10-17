@@ -1,0 +1,839 @@
+
+<!-- Generated with Onyx Studio | https://builtbybuzz.dev -->
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Affordable Website Hosting | BuiltByBuzz</title>
+  <meta name="description" content="BuiltByBuzz Hosting is coming soon! Affordable static website hosting for HTML, CSS, and JavaScript, with HTTPS and free subdomains starting at $10/year." />
+  <meta name="author" content="Buzz" />
+
+  <meta property="og:title" content="Affordable Website Hosting | BuiltByBuzz" />
+  <meta property="og:description" content="BuiltByBuzz Hosting is coming soon! Affordable static website hosting for HTML, CSS, and JavaScript, with HTTPS and free subdomains starting at $10/year." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://builtbybuzz.dev/hosting" />
+
+  <link rel="canonical" href="https://builtbybuzz.dev/hosting" />
+  <meta name="twitter:card" content="summary" />
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #111827;
+      color: white;
+      font-family: system-ui, sans-serif;
+    }
+
+    section {
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .onyx-section {
+      position: relative;
+      width: 1000px;
+      margin: 0 auto;
+      transform-origin: top left;
+    }
+
+    .onyx-section > * {
+      box-sizing: border-box;
+    }
+
+    a {
+      cursor: pointer;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #a5b4fc;
+      outline-offset: 3px;
+    }
+
+    .brand {
+      position: absolute;
+      z-index: 0;
+      left: 8px;
+      top: 2px;
+      width: 143px;
+      height: 49px;
+      color: #ffffff;
+      font: 700 16px Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      text-decoration: none;
+    }
+
+    .nav-active {
+      position: absolute;
+      z-index: 1;
+      left: 900px;
+      top: 2px;
+      width: 90px;
+      height: 45px;
+      color: #dbeafe;
+      background: #29334a;
+      font: 700 16px Arial, sans-serif;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .eyebrow {
+      position: absolute;
+      z-index: 2;
+      left: 428.5px;
+      top: 74px;
+      width: 143px;
+      height: 39px;
+      padding: 10px;
+      color: #c7d2fe;
+      background: #29334a;
+      font: 700 12px Arial, sans-serif;
+      border-radius: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .header-divider {
+      position: absolute;
+      left: 0;
+      top: 57px;
+      width: 1000px;
+      height: 2px;
+      background: #94a3b8;
+    }
+
+    .hero-title {
+      position: absolute;
+      left: 268px;
+      top: 114px;
+      width: 464px;
+      height: 61px;
+      padding: 12px;
+      margin: 0;
+      color: #ffffff;
+      font: 700 35px/1.2 Arial, sans-serif;
+      text-align: center;
+    }
+
+    .hero-description {
+      position: absolute;
+      left: 93.5px;
+      top: 161px;
+      width: 813px;
+      height: 45px;
+      padding: 12px;
+      margin: 0;
+      color: #b7c2d6;
+      font: 400 16px/1.5 Arial, sans-serif;
+      text-align: center;
+    }
+
+    .hero-button {
+      position: absolute;
+      top: 218px;
+      width: 135px;
+      height: 54px;
+      padding: 12px;
+      color: #ffffff;
+      background: #6366f1;
+      border-radius: 8px;
+      font: 700 16px Arial, sans-serif;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .hero-button:hover {
+      background: #4f46e5;
+    }
+
+    .hero-button.secondary {
+      background: #526078;
+      color: #e2e8f0;
+    }
+
+    .hero-button.secondary:hover {
+      background: #64748b;
+    }
+
+    .pricing-title {
+      position: absolute;
+      left: 347.5px;
+      top: 301px;
+      width: 305px;
+      height: 54px;
+      padding: 12px;
+      margin: 0;
+      color: #ffffff;
+      font: 700 22px/1.5 Arial, sans-serif;
+      text-align: center;
+    }
+
+    .pricing-subtitle {
+      position: absolute;
+      left: 380px;
+      top: 341px;
+      width: 240px;
+      height: 41px;
+      padding: 12px;
+      margin: 0;
+      color: #9caac1;
+      font: 400 13px/1.5 Arial, sans-serif;
+      text-align: center;
+    }
+
+    .pricing-card {
+      position: absolute;
+      top: 394px;
+      width: 457px;
+      height: 292px;
+      padding: 12px;
+      background: #1d293d;
+      color: #c7d2fe;
+      border: 2px solid #36445e;
+      border-radius: 16px;
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .pricing-card.lifetime {
+      background: #252344;
+      border-color: #818cf8;
+    }
+
+    .plan-name {
+      color: #becbea;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .plan-price {
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .plan-period {
+      font-size: 10px;
+      font-weight: 400;
+      color: #b8c5db;
+    }
+
+    .plan-divider {
+      border-top: 1px solid #3a4963;
+      margin: 6px 0;
+    }
+
+    .plan-features {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.35;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .plan-features li {
+      display: flex;
+      gap: 6px;
+    }
+
+    .checkmark {
+      color: #6ee7b7;
+    }
+
+    .plan-button {
+      margin-top: auto;
+      flex-shrink: 0;
+      background: #34435f;
+      color: #c7d2fe;
+      border-radius: 6px;
+      padding: 9px 12px;
+      font-size: 11px;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      transition: background 0.2s ease;
+    }
+
+    .plan-button:hover {
+      background: #465779;
+    }
+
+    .steps-card {
+      position: absolute;
+      left: 9px;
+      top: 714px;
+      width: 982px;
+      height: 276px;
+      padding: 12px;
+      color: #c7d2fe;
+      background: #1d293d;
+      border-radius: 12px;
+      font: 700 16px Arial, sans-serif;
+    }
+
+    .steps-heading {
+      display: block;
+      margin: 0 0 16px;
+      font-size: 16px;
+    }
+
+    .steps-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .steps-list li {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .step-number {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      min-width: 28px;
+      height: 32px;
+      padding: 0 4px;
+      border-radius: 9px;
+      background: #37335c;
+      color: #bec8f5;
+      font-size: 12px;
+    }
+
+    .step-content {
+      min-width: 0;
+    }
+
+    .step-content strong {
+      font-size: 13px;
+      display: block;
+      line-height: 1.3;
+    }
+
+    .step-content p {
+      margin: 6px 0 0;
+      color: #aab8d0;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 1.4;
+    }
+
+    .cta-background {
+      position: absolute;
+      left: 9px;
+      top: 1013px;
+      width: 982px;
+      height: 258px;
+      background: #252344;
+      border-radius: 16px;
+    }
+
+    .cta-icon {
+      position: absolute;
+      left: 474.5px;
+      top: 1024px;
+      width: 51px;
+      height: 45px;
+      color: #a5b4fc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .cta-title {
+      position: absolute;
+      left: 385.5px;
+      top: 1057px;
+      width: 229px;
+      height: 48px;
+      padding: 12px;
+      margin: 0;
+      color: #ffffff;
+      font: 700 19px/1.5 Arial, sans-serif;
+      text-align: center;
+    }
+
+    .cta-description {
+      position: absolute;
+      left: 327.5px;
+      top: 1088px;
+      width: 345px;
+      height: 45px;
+      padding: 12px;
+      margin: 0;
+      color: #b7c2d6;
+      font: 400 16px/1.5 Arial, sans-serif;
+      text-align: center;
+    }
+
+    .cta-button {
+      position: absolute;
+      left: 406.5px;
+      top: 1139px;
+      width: 187px;
+      height: 47px;
+      padding: 12px;
+      background: #6366f1;
+      color: #ffffff;
+      border-radius: 8px;
+      font: 400 16px Arial, sans-serif;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: background 0.2s ease;
+    }
+
+    .cta-button:hover {
+      background: #4f46e5;
+    }
+
+    .footer-text {
+      position: absolute;
+      left: 16px;
+      top: 1294px;
+      width: 248px;
+      height: 37px;
+      padding: 12px;
+      margin: 0;
+      color: #8492aa;
+      font: 400 12px/1.5 Arial, sans-serif;
+      text-align: center;
+    }
+
+    .footer-link {
+      position: absolute;
+      top: 1295px;
+      width: 145px;
+      height: 39px;
+      padding: 12px;
+      color: #8492aa;
+      font: 400 13px Arial, sans-serif;
+      text-decoration: none;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .footer-link:hover {
+      color: #ffffff;
+    }
+
+    .lucide-icon {
+      display: inline-block;
+      flex-shrink: 0;
+      width: 18px;
+      height: 18px;
+      background-color: currentColor;
+      mask-position: center;
+      mask-size: contain;
+      mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      -webkit-mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+    }
+
+    .icon-code {
+      mask-image: url("https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/code.svg");
+      -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/code.svg");
+    }
+
+    .icon-arrow {
+      mask-image: url("https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/arrow-right.svg");
+      -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/arrow-right.svg");
+    }
+
+    .icon-rocket {
+      width: 22px;
+      height: 22px;
+      mask-image: url("https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/rocket.svg");
+      -webkit-mask-image: url("https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/rocket.svg");
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .hero-button,
+      .plan-button,
+      .cta-button {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <section style="background:#111827">
+    <div class="onyx-section" style="height:1340px">
+
+      <!-- HEADER -->
+      <a class="brand" href="/">
+        <span class="lucide-icon icon-code" aria-hidden="true"></span>
+        BuiltByBuzz
+      </a>
+
+      <div class="nav-active">Hosting</div>
+      <div class="eyebrow">BuiltByBuzz Hosting</div>
+      <div class="header-divider" aria-hidden="true"></div>
+
+      <!-- HERO -->
+      <h1 class="hero-title">Your Website. Your Space.</h1>
+
+      <p class="hero-description">
+        Affordable, reliable static website hosting for developers, creators, and anyone who wants a place on the web.
+      </p>
+
+      <a
+        class="hero-button"
+        href="#plans"
+        style="left:355px"
+      >
+        View Plans
+        <span
+          class="lucide-icon icon-arrow"
+          style="width:14px;height:14px"
+          aria-hidden="true"
+        ></span>
+      </a>
+
+      <a
+        class="hero-button secondary"
+        href="#how-it-works"
+        style="left:514px"
+      >
+        How it Works
+      </a>
+
+      <!-- PRICING SECTION -->
+      <h2
+        id="plans"
+        class="pricing-title"
+      >
+        Simple, Affordable Pricing
+      </h2>
+
+      <p class="pricing-subtitle">
+        No complicated plans. Just hosting.
+      </p>
+
+      <!-- ANNUAL PLAN -->
+      <article
+        class="pricing-card"
+        style="left:12px"
+      >
+        <strong class="plan-name">Annual</strong>
+
+        <div class="plan-price">$10</div>
+        <div class="plan-period">per year</div>
+        <div class="plan-divider" aria-hidden="true"></div>
+
+        <ul class="plan-features">
+          <li>
+            <span class="checkmark" aria-hidden="true">✓</span>
+            <span>Your own subdomain</span>
+          </li>
+          <li>
+            <span class="checkmark" aria-hidden="true">✓</span>
+            <span>HTTPS</span>
+          </li>
+          <li>
+            <span class="checkmark" aria-hidden="true">✓</span>
+            <span>Static files</span>
+          </li>
+        </ul>
+
+        <a
+          class="plan-button"
+          href="/coming-soon"
+        >
+          Select Plan
+        </a>
+      </article>
+
+      <!-- LIFETIME PLAN -->
+      <article
+        class="pricing-card lifetime"
+        style="left:528px"
+      >
+        <strong class="plan-name">Lifetime</strong>
+
+        <div class="plan-price">$60</div>
+        <div class="plan-period">one-time payment</div>
+        <div class="plan-divider" aria-hidden="true"></div>
+
+        <ul class="plan-features">
+          <li>
+            <span class="checkmark" aria-hidden="true">✓</span>
+            <span>Your own subdomain</span>
+          </li>
+          <li>
+            <span class="checkmark" aria-hidden="true">✓</span>
+            <span>HTTPS Protected</span>
+          </li>
+          <li>
+            <span class="checkmark" aria-hidden="true">✓</span>
+            <span>Static Files</span>
+          </li>
+          <li>
+            <span class="checkmark" aria-hidden="true">✓</span>
+            <span>No annual renewal</span>
+          </li>
+        </ul>
+
+        <a
+          class="plan-button"
+          href="/coming-soon"
+        >
+          Select Plan
+        </a>
+      </article>
+
+      <!-- HOW IT WORKS -->
+      <article
+        id="how-it-works"
+        class="steps-card"
+      >
+        <h2 class="steps-heading">How it works</h2>
+
+        <ol class="steps-list">
+          <li>
+            <span class="step-number">01</span>
+            <div class="step-content">
+              <strong>Submit your website</strong>
+              <p>Upload your HTML, CSS, and JavaScript files.</p>
+            </div>
+          </li>
+
+          <li>
+            <span class="step-number">02</span>
+            <div class="step-content">
+              <strong>Request reviewed</strong>
+              <p>Your website is reviewed before approval.</p>
+            </div>
+          </li>
+
+          <li>
+            <span class="step-number">03</span>
+            <div class="step-content">
+              <strong>Complete payment</strong>
+              <p>Pay the remaining balance after approval.</p>
+            </div>
+          </li>
+
+          <li>
+            <span class="step-number">04</span>
+            <div class="step-content">
+              <strong>Go live!</strong>
+              <p>Your website is published.</p>
+            </div>
+          </li>
+        </ol>
+      </article>
+
+      <!-- CALL TO ACTION -->
+      <div class="cta-background" aria-hidden="true"></div>
+
+      <div class="cta-icon">
+        <span
+          class="lucide-icon icon-rocket"
+          role="img"
+          aria-label="Rocket"
+        ></span>
+      </div>
+
+      <h2 class="cta-title">
+        Ready to get online?
+      </h2>
+
+      <p class="cta-description">
+        Get started with affordable website hosting.
+      </p>
+
+      <a
+        class="cta-button"
+        href="/coming-soon"
+      >
+        Apply for hosting
+        <span
+          class="lucide-icon icon-arrow"
+          aria-hidden="true"
+        ></span>
+      </a>
+
+      <!-- FOOTER -->
+      <p class="footer-text">
+        © 2026 BuiltByBuzz. All Rights Reserved.
+      </p>
+
+      <a
+        class="footer-link"
+        href="/coming-soon"
+        style="left:427.5px"
+      >
+        Terms of Service
+      </a>
+
+      <a
+        class="footer-link"
+        href="/coming-soon"
+        style="left:733px"
+      >
+        Privacy Policy
+      </a>
+
+    </div>
+  </section>
+
+
+  <script>
+    (function () {
+      "use strict";
+
+      const DESIGN_WIDTH = 1000;
+      const PREFERRED_SCALE = 1.3;
+      const sections = document.querySelectorAll(".onyx-section");
+
+      function getScale() {
+        // Use 130% on larger screens.
+        // Shrink proportionally on smaller screens to prevent overflow.
+        return Math.min(
+          PREFERRED_SCALE,
+          document.documentElement.clientWidth / DESIGN_WIDTH
+        );
+      }
+
+      function resize() {
+        const scale = getScale();
+        const viewportWidth = document.documentElement.clientWidth;
+
+        sections.forEach((section) => {
+          const designHeight = parseFloat(section.style.height);
+          const scaledWidth = DESIGN_WIDTH * scale;
+          const scaledHeight = designHeight * scale;
+
+          // Center the visible (scaled) canvas.
+          const leftOffset = Math.max(
+            0,
+            (viewportWidth - scaledWidth) / 2
+          );
+
+          section.style.margin = "0";
+          section.style.transformOrigin = "top left";
+          section.style.transform = `translateX(${leftOffset}px) scale(${scale})`;
+
+          // Make the parent match the rendered height.
+          section.parentElement.style.height = `${scaledHeight}px`;
+        });
+      }
+
+      function scrollToSection(id, updateHistory = true) {
+        const target = document.getElementById(id);
+
+        if (!target) return;
+
+        const rect = target.getBoundingClientRect();
+        const targetY = window.scrollY + rect.top - 16;
+
+        const reducedMotion = window.matchMedia(
+          "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        window.scrollTo({
+          top: Math.max(0, targetY),
+          behavior: reducedMotion ? "instant" : "smooth"
+        });
+
+        if (updateHistory) {
+          history.pushState(null, "", `#${id}`);
+        }
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach((link) => {
+        link.addEventListener("click", (event) => {
+          const id = link.getAttribute("href").slice(1);
+
+          if (!id || !document.getElementById(id)) {
+            return;
+          }
+
+          event.preventDefault();
+          scrollToSection(id);
+        });
+      });
+
+      let resizeFrame = null;
+
+      window.addEventListener("resize", () => {
+        if (resizeFrame !== null) {
+          cancelAnimationFrame(resizeFrame);
+        }
+
+        resizeFrame = requestAnimationFrame(() => {
+          resize();
+          resizeFrame = null;
+        });
+      });
+
+      window.addEventListener("popstate", () => {
+        const id = decodeURIComponent(
+          window.location.hash.slice(1)
+        );
+
+        if (id) {
+          scrollToSection(id, false);
+        }
+      });
+
+      resize();
+
+      if (window.location.hash) {
+        const id = decodeURIComponent(
+          window.location.hash.slice(1)
+        );
+
+        requestAnimationFrame(() => {
+          scrollToSection(id, false);
+        });
+      }
+    })();
+  </script>
+
+
+</body>
+</html>

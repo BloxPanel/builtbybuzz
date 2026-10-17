@@ -1,23 +1,33 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="BuiltByBuzz is an independent development studio creating accessible software, developer tools, and Discord applications.">
-  <meta name="theme-color" content="#172033">
+
   <title>BuiltByBuzz | Independent Development Studio</title>
+  <meta name="description" content="BuiltByBuzz is an independent development studio creating free developer tools, Discord applications, and affordable static website hosting.">
+  <meta name="author" content="Buzz">
+  <meta name="theme-color" content="#111827">
+  <link rel="canonical" href="https://builtbybuzz.dev/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BuiltByBuzz | Independent Development Studio">
+  <meta property="og:description" content="Independent software development, free developer tools, Discord applications, and affordable website hosting.">
+  <meta property="og:url" content="https://builtbybuzz.dev/">
+  <meta name="twitter:card" content="summary">
 
   <style>
     :root {
-      --bg: #172033;
-      --card: #222d46;
+      --bg: #111827;
+      --card: #1d293d;
       --accent: #6366f1;
       --accent-light: #a5b4fc;
       --text: #ffffff;
-      --secondary: #cbd5e1;
-      --muted: #94a3b8;
-      --border: #465575;
+      --secondary: #b7c2d6;
+      --muted: #9caac1;
+      --border: #36445e;
+      --max-width: 1300px;
     }
 
     * {
@@ -33,105 +43,134 @@
       min-height: 100vh;
       background: var(--bg);
       color: var(--text);
-      font-family: Inter, system-ui, -apple-system,
-        BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
+      font-family: Arial, system-ui, sans-serif;
+      line-height: 1.5;
     }
 
     a {
-      text-decoration: none;
       color: inherit;
+      text-decoration: none;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent-light);
+      outline-offset: 4px;
+      border-radius: 5px;
     }
 
     .container {
-      width: min(100% - 40px, 1040px);
+      width: min(calc(100% - 40px), var(--max-width));
       margin-inline: auto;
     }
 
-    /* Navigation */
+    /* Header — same centered width as Hosting */
 
-    header {
-      border-bottom: 1px solid rgba(148, 163, 184, 0.15);
+    .site-header {
+      padding-top: 2px;
     }
 
-    nav {
-      min-height: 68px;
+    .site-nav {
+      min-height: 76px;
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 24px;
+      align-items: flex-start;
+      gap: 20px;
+      border-bottom: 2px solid #94a3b8;
     }
 
     .logo {
-      font-size: 20px;
-      font-weight: 750;
-      letter-spacing: -0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 12px;
+      font-size: 21px;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .logo svg {
+      width: 21px;
+      height: 21px;
     }
 
     .nav-links {
       display: flex;
       align-items: center;
-      gap: 28px;
-      color: var(--secondary);
-      font-size: 14px;
+      gap: 12px;
+    }
+
+    .nav-links a {
+      min-height: 56px;
+      padding: 15px 18px;
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #dbeafe;
+      transition: background 0.2s;
     }
 
     .nav-links a:hover {
-      color: var(--accent-light);
+      background: #29334a;
+    }
+
+    .nav-links .hosting-link {
+      background: #29334a;
     }
 
     /* Hero */
 
     .hero {
-      padding: 75px 0 70px;
+      padding: 48px 0 75px;
       text-align: center;
     }
 
     .eyebrow {
       display: inline-block;
-      padding: 7px 16px;
-      border: 1px solid var(--accent-light);
+      padding: 12px 18px;
+      background: #29334a;
+      color: #c7d2fe;
       border-radius: 999px;
-      color: var(--accent-light);
-      font-size: 11px;
+      font-size: 14px;
       font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
     }
 
     h1 {
-      margin: 22px 0 16px;
-      font-size: clamp(32px, 5vw, 48px);
-      font-weight: 750;
+      margin: 24px 0 12px;
+      font-size: clamp(32px, 4vw, 46px);
+      font-weight: 700;
       line-height: 1.2;
-      letter-spacing: -1.5px;
+      letter-spacing: -0.6px;
     }
 
     .hero-description {
-      max-width: 650px;
+      max-width: 1050px;
       margin: 0 auto;
       color: var(--secondary);
-      font-size: 15px;
-      line-height: 1.8;
+      font-size: 20px;
+      line-height: 1.6;
     }
 
     .hero-actions {
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
-      gap: 14px;
-      margin-top: 28px;
+      gap: 30px;
+      margin-top: 30px;
     }
 
     .button {
       display: inline-flex;
-      align-items: center;
       justify-content: center;
-      min-height: 42px;
-      padding: 10px 20px;
-      border-radius: 8px;
-      font-size: 13px;
-      font-weight: 650;
+      align-items: center;
+      gap: 10px;
+      min-height: 70px;
+      padding: 15px 24px;
+      border-radius: 10px;
+      font-size: 20px;
+      font-weight: 700;
       transition: background 0.2s, transform 0.2s;
     }
 
@@ -148,104 +187,157 @@
       background: #4f46e5;
     }
 
-    .button-outline {
-      border: 1px solid var(--accent-light);
-      color: white;
+    .button-secondary {
+      background: #526078;
+      color: #e2e8f0;
     }
 
-    .button-outline:hover {
-      background: rgba(99, 102, 241, 0.12);
+    .button-secondary:hover {
+      background: #64748b;
     }
 
-    /* Projects */
-
-    .projects {
-      padding: 55px 0 65px;
-      border-top: 1px solid rgba(148, 163, 184, 0.25);
-    }
+    /* Section headings */
 
     .section-heading {
       text-align: center;
-      margin-bottom: 32px;
+      margin-bottom: 36px;
     }
 
     .section-heading h2 {
-      margin: 0 0 8px;
-      font-size: 27px;
-      font-weight: 750;
-      letter-spacing: -0.5px;
+      margin: 0 0 12px;
+      font-size: 30px;
+      font-weight: 700;
     }
 
     .section-heading p {
       margin: 0;
       color: var(--muted);
-      font-size: 14px;
+      font-size: 17px;
+    }
+
+    /* Projects */
+
+    .projects {
+      padding: 0 0 65px;
     }
 
     .project-grid {
       display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 20px;
-      max-width: 850px;
-      margin: 0 auto;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
     }
 
     .project-card {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      padding: 25px;
+      min-height: 310px;
+      padding: 26px;
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
+      border: 2px solid var(--border);
+      border-radius: 16px;
       transition: border-color 0.2s, transform 0.2s;
     }
 
     .project-card:hover {
-      border-color: var(--accent-light);
+      border-color: #818cf8;
       transform: translateY(-3px);
     }
 
     .project-icon {
-      width: 42px;
-      height: 42px;
+      width: 48px;
+      height: 48px;
       display: grid;
       place-items: center;
-      margin-bottom: 16px;
+      margin-bottom: 18px;
       background: rgba(99, 102, 241, 0.15);
-      border-radius: 10px;
+      border-radius: 12px;
     }
 
     .project-icon img {
-      width: 24px;
-      height: 24px;
+      width: 26px;
+      height: 26px;
       filter: invert(76%) sepia(20%)
         saturate(1128%) hue-rotate(197deg)
         brightness(104%) contrast(98%);
     }
 
     .project-card h3 {
-      margin: 0 0 8px;
-      font-size: 19px;
+      margin: 0 0 12px;
+      font-size: 23px;
       line-height: 1.3;
     }
 
     .project-card p {
-      margin: 0 0 20px;
+      margin: 0 0 24px;
       color: var(--secondary);
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 16px;
+      line-height: 1.65;
     }
 
     .project-link {
       margin-top: auto;
       color: var(--accent-light);
-      font-size: 13px;
-      font-weight: 650;
+      font-size: 15px;
+      font-weight: 700;
     }
 
     .project-link:hover {
       text-decoration: underline;
+    }
+
+    .status-label {
+      display: inline-flex;
+      align-items: center;
+      padding: 5px 11px;
+      margin-bottom: 12px;
+      background: rgba(99, 102, 241, 0.18);
+      color: #c7d2fe;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    /* Hosting feature */
+
+    .hosting-feature {
+      padding: 0 0 65px;
+    }
+
+    .hosting-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      padding: 38px;
+      background: #252344;
+      border: 2px solid #818cf8;
+      border-radius: 16px;
+    }
+
+    .hosting-content {
+      max-width: 790px;
+    }
+
+    .hosting-card h2 {
+      margin: 0 0 12px;
+      font-size: 30px;
+    }
+
+    .hosting-card p {
+      margin: 0;
+      color: var(--secondary);
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    .hosting-price {
+      color: #c7d2fe;
+      font-weight: 700;
+    }
+
+    .hosting-actions {
+      flex-shrink: 0;
     }
 
     /* About */
@@ -255,101 +347,183 @@
     }
 
     .about-card {
-      max-width: 850px;
-      margin: 0 auto;
-      padding: 38px 35px;
+      padding: 45px 35px;
       background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 14px;
+      border: 2px solid var(--border);
+      border-radius: 16px;
       text-align: center;
     }
 
     .about-card h2 {
-      margin: 0 0 14px;
-      font-size: 24px;
-      letter-spacing: -0.4px;
+      margin: 0 0 15px;
+      font-size: 28px;
     }
 
     .about-card p {
-      max-width: 680px;
-      margin: 0 auto 22px;
+      max-width: 850px;
+      margin: 0 auto 28px;
       color: var(--secondary);
-      font-size: 14px;
+      font-size: 17px;
       line-height: 1.8;
     }
 
     /* Footer */
 
     footer {
-      border-top: 1px solid rgba(148, 163, 184, 0.15);
-      padding: 24px 0;
+      padding: 25px 0;
     }
 
     .footer-inner {
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       flex-wrap: wrap;
-      gap: 12px;
+      gap: 18px;
+      padding-top: 20px;
+      border-top: 1px solid #36445e;
       color: var(--muted);
-      font-size: 12px;
+      font-size: 14px;
     }
 
-    .footer-inner a:hover {
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
       color: var(--accent-light);
     }
 
-    /* Mobile */
+    /* Responsive layouts */
+
+    @media (max-width: 950px) {
+      .project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .hosting-card {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .hosting-actions {
+        width: 100%;
+      }
+    }
 
     @media (max-width: 650px) {
       .container {
-        width: min(100% - 32px, 1040px);
+        width: min(calc(100% - 28px), var(--max-width));
       }
 
-      nav {
-        min-height: 62px;
-      }
-
-      .nav-links {
-        gap: 16px;
-        font-size: 12px;
+      .site-nav {
+        min-height: 65px;
+        flex-wrap: wrap;
+        align-items: center;
+        padding-bottom: 10px;
       }
 
       .logo {
+        padding: 10px 0;
         font-size: 18px;
       }
 
+      .nav-links {
+        gap: 4px;
+        flex-wrap: wrap;
+      }
+
+      .nav-links a {
+        min-height: 40px;
+        padding: 8px 10px;
+        font-size: 13px;
+      }
+
       .hero {
-        padding: 65px 0 55px;
+        padding: 45px 0 60px;
+      }
+
+      .eyebrow {
+        font-size: 11px;
+        padding: 9px 13px;
+      }
+
+      h1 {
+        font-size: clamp(30px, 8vw, 40px);
       }
 
       .hero-description {
+        font-size: 15px;
+      }
+
+      .hero-actions {
+        gap: 12px;
+        margin-top: 25px;
+      }
+
+      .button {
+        min-height: 48px;
+        padding: 12px 16px;
         font-size: 14px;
       }
 
-      .projects {
-        padding: 45px 0 50px;
+      .section-heading h2 {
+        font-size: 25px;
+      }
+
+      .section-heading p {
+        font-size: 14px;
       }
 
       .project-grid {
         grid-template-columns: 1fr;
       }
 
-      .about {
-        padding-bottom: 55px;
+      .project-card {
+        min-height: 260px;
+        padding: 22px;
+      }
+
+      .project-card h3 {
+        font-size: 21px;
+      }
+
+      .project-card p {
+        font-size: 14px;
+      }
+
+      .hosting-card {
+        padding: 25px 20px;
+      }
+
+      .hosting-card h2 {
+        font-size: 24px;
+      }
+
+      .hosting-card p {
+        font-size: 15px;
       }
 
       .about-card {
-        padding: 28px 22px;
+        padding: 30px 20px;
       }
 
       .about-card h2 {
-        font-size: 21px;
+        font-size: 23px;
+      }
+
+      .about-card p {
+        font-size: 15px;
       }
 
       .footer-inner {
         justify-content: center;
         text-align: center;
+      }
+
+      .footer-links {
+        justify-content: center;
       }
     }
 
@@ -369,22 +543,37 @@
 <body>
 
   <!-- Navigation -->
+  <header class="site-header">
+    <nav class="container site-nav">
 
-  <header>
-    <nav class="container">
-      <a class="logo" href="/">BuiltByBuzz</a>
+      <a class="logo" href="/">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <path d="m8 17-5-5 5-5"></path>
+          <path d="m16 7 5 5-5 5"></path>
+        </svg>
+        BuiltByBuzz
+      </a>
 
       <div class="nav-links">
         <a href="#projects">Projects</a>
+        <a href="/hosting/" class="hosting-link">Hosting</a>
         <a href="#about">About</a>
       </div>
+
     </nav>
   </header>
 
   <main>
 
     <!-- Hero -->
-
     <section class="hero">
       <div class="container">
 
@@ -407,7 +596,7 @@
             Explore Projects &rarr;
           </a>
 
-          <a href="#about" class="button button-outline">
+          <a href="#about" class="button button-secondary">
             About BuiltByBuzz
           </a>
         </div>
@@ -416,7 +605,6 @@
     </section>
 
     <!-- Featured Projects -->
-
     <section id="projects" class="projects">
       <div class="container">
 
@@ -431,12 +619,10 @@
         <div class="project-grid">
 
           <!-- Onyx Studio -->
-
           <article class="project-card">
-
             <div class="project-icon">
               <img
-                src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/panels-top-left.svg"
+                src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/panels-top-left.svg"
                 alt=""
               >
             </div>
@@ -452,16 +638,13 @@
             <a class="project-link" href="/onyx-studio">
               Explore project &rarr;
             </a>
-
           </article>
 
           <!-- Onyx Security -->
-
           <article class="project-card">
-
             <div class="project-icon">
               <img
-                src="https://cdn.jsdelivr.net/npm/lucide-static@latest/icons/shield-check.svg"
+                src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/shield-check.svg"
                 alt=""
               >
             </div>
@@ -477,19 +660,72 @@
             <a class="project-link" href="/onyx-security">
               Explore project &rarr;
             </a>
+          </article>
 
+          <!-- BuiltByBuzz Hosting -->
+          <article class="project-card">
+            <div class="project-icon">
+              <img
+                src="https://cdn.jsdelivr.net/npm/lucide-static@0.468.0/icons/server.svg"
+                alt=""
+              >
+            </div>
+
+            <span class="status-label">Coming Soon</span>
+
+            <h3>BuiltByBuzz Hosting</h3>
+
+            <p>
+              Affordable static website hosting for
+              HTML, CSS, and JavaScript projects.
+              Get your own subdomain with simple,
+              transparent pricing.
+            </p>
+
+            <a class="project-link" href="/hosting/">
+              Explore hosting &rarr;
+            </a>
           </article>
 
         </div>
+      </div>
+    </section>
 
+    <!-- Hosting feature -->
+    <section class="hosting-feature">
+      <div class="container">
+        <div class="hosting-card">
+
+          <div class="hosting-content">
+            <span class="status-label">
+              Hosting Coming Soon
+            </span>
+
+            <h2>Your Website. Your Space.</h2>
+
+            <p>
+              BuiltByBuzz Hosting makes it easier to
+              get your website online without complicated
+              plans or expensive subscriptions.
+              Static website hosting starts at
+              <span class="hosting-price">$10/year</span>,
+              with a one-time lifetime plan also planned.
+            </p>
+          </div>
+
+          <div class="hosting-actions">
+            <a href="/hosting/" class="button button-primary">
+              Explore Hosting &rarr;
+            </a>
+          </div>
+
+        </div>
       </div>
     </section>
 
     <!-- About -->
-
     <section id="about" class="about">
       <div class="container">
-
         <div class="about-card">
 
           <h2>
@@ -504,24 +740,27 @@
             the goal is simple: build things worth using.
           </p>
 
-          <a href="/more" class="button button-outline">
+          <a href="/more" class="button button-secondary">
             More About BuiltByBuzz &rarr;
           </a>
 
         </div>
-
       </div>
     </section>
 
   </main>
 
   <!-- Footer -->
-
   <footer>
     <div class="container footer-inner">
-      <span>&copy; 2026 BuiltByBuzz</span>
+      <span>&copy; 2026 BuiltByBuzz. All Rights Reserved.</span>
+
       <span>Independent Development Studio</span>
-      <a href="#projects">Back to Projects &uarr;</a>
+
+      <div class="footer-links">
+        <a href="/hosting/">Hosting</a>
+        <a href="#projects">Back to Projects &uarr;</a>
+      </div>
     </div>
   </footer>
 
