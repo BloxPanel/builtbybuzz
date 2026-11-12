@@ -12,7 +12,7 @@
     content="Onyx Studio is a free, open-source visual development platform for building websites and Discord embeds. Design visually, customize elements, and export your work."
   >
   <meta name="author" content="Buzz">
-  <meta name="theme-color" content="#111827">
+  <meta name="theme-color" content="#0d111b">
 
   <link
     rel="canonical"
@@ -33,15 +33,35 @@
 
   <style>
     :root {
-      --background: #111827;
-      --section: #172033;
-      --card: #1d293d;
-      --purple: #6366f1;
-      --lavender: #a5b4fc;
-      --white: #ffffff;
-      --secondary: #b7c2d6;
-      --muted: #9caac1;
-      --border: #36445e;
+      --background: #0d111b;
+      --section: #101621;
+      --surface: #171f2d;
+      --surface-hover: #202938;
+      --surface-button: #1b2432;
+      --surface-button-hover: #253246;
+      --surface-accent: #342e24;
+      --text: #f8fafc;
+      --text-nav: #a8b3c5;
+      --text-secondary: #94a3b8;
+      --text-muted: #7d8ba0;
+      --text-button: #dbe2eb;
+      --accent: #e6af45;
+      --accent-hover: #f2bf60;
+      --accent-border: #f0c062;
+      --accent-text: #edc16b;
+      --accent-foreground: #231c12;
+      --accent-subtle-border: #5b4627;
+      --border: #2b3546;
+      --border-button: #354154;
+      --highlight-start: #252722;
+      --highlight-end: #19222c;
+      --highlight-border: #414036;
+      --focus: #e6af45;
+      --control-red: #fb7185;
+      --control-yellow: #fbbf24;
+      --control-green: #4ade80;
+      --icon-filter: invert(73%) sepia(64%) saturate(548%) hue-rotate(355deg) brightness(98%) contrast(92%);
+      --preview-shadow: 0 25px 80px rgb(0 0 0 / 0.4);
       --max-width: 1300px;
     }
 
@@ -58,8 +78,8 @@
       margin: 0;
       min-height: 100vh;
       background: var(--background);
-      color: var(--white);
-      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.5;
     }
 
@@ -70,7 +90,7 @@
 
     a:focus-visible,
     summary:focus-visible {
-      outline: 3px solid var(--lavender);
+      outline: 3px solid var(--focus);
       outline-offset: 4px;
       border-radius: 5px;
     }
@@ -92,7 +112,7 @@
       justify-content: space-between;
       align-items: flex-start;
       gap: 20px;
-      border-bottom: 2px solid #94a3b8;
+      border-bottom: 1px solid var(--border);
     }
 
     .brand {
@@ -111,6 +131,10 @@
       flex-shrink: 0;
     }
 
+    .brand-accent {
+      color: var(--accent);
+    }
+
     .nav-links {
       display: flex;
       align-items: center;
@@ -126,16 +150,19 @@
       border-radius: 10px;
       font-size: 16px;
       font-weight: 600;
-      color: #dbeafe;
-      transition: background 0.2s;
+      color: var(--text-nav);
+      transition: background 0.2s, color 0.2s;
     }
 
     .nav-links a:hover {
-      background: #29334a;
+      color: var(--text);
+      background: var(--surface-hover);
     }
 
     .nav-links .active-link {
-      background: #29334a;
+      color: var(--accent-text);
+      background: var(--surface-accent);
+      box-shadow: inset 2px 0 var(--accent);
     }
 
     /* Hero */
@@ -149,9 +176,10 @@
       display: inline-flex;
       align-items: center;
       padding: 12px 18px;
-      background: #29334a;
+      background: var(--surface-accent);
+      border: 1px solid var(--accent-subtle-border);
       border-radius: 999px;
-      color: #c7d2fe;
+      color: var(--accent-text);
       font-size: 14px;
       font-weight: 700;
     }
@@ -164,7 +192,7 @@
     }
 
     .hero-description {
-      color: var(--secondary);
+      color: var(--text-secondary);
       max-width: 950px;
       margin: 0 auto 30px;
       font-size: 20px;
@@ -188,7 +216,7 @@
       border-radius: 10px;
       font-weight: 700;
       font-size: 20px;
-      transition: transform 0.2s, background 0.2s;
+      transition: transform 0.2s, background 0.2s, border-color 0.2s;
     }
 
     .btn:hover {
@@ -196,26 +224,28 @@
     }
 
     .btn-primary {
-      background: var(--purple);
-      color: white;
+      background: var(--accent);
+      color: var(--accent-foreground);
+      border: 1px solid var(--accent-border);
     }
 
     .btn-primary:hover {
-      background: #4f46e5;
+      background: var(--accent-hover);
     }
 
     .btn-secondary {
-      background: #526078;
-      color: #e2e8f0;
+      background: var(--surface-button);
+      color: var(--text-button);
+      border: 1px solid var(--border-button);
     }
 
     .btn-secondary:hover {
-      background: #64748b;
+      background: var(--surface-button-hover);
     }
 
     .hero-note {
       margin-top: 22px;
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 14px;
     }
 
@@ -228,11 +258,11 @@
     .preview-frame {
       max-width: 1100px;
       margin-inline: auto;
-      border: 2px solid var(--border);
-      background: var(--card);
+      border: 1px solid var(--border);
+      background: var(--surface);
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 25px 80px #0006;
+      box-shadow: var(--preview-shadow);
     }
 
     .preview-header {
@@ -252,20 +282,20 @@
     }
 
     .red {
-      background: #fb7185;
+      background: var(--control-red);
     }
 
     .yellow {
-      background: #fbbf24;
+      background: var(--control-yellow);
     }
 
     .green {
-      background: #4ade80;
+      background: var(--control-green);
     }
 
     .preview-title {
       margin-left: 12px;
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 12px;
     }
 
@@ -278,7 +308,7 @@
 
     .preview-caption {
       text-align: center;
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 14px;
       margin-top: 18px;
     }
@@ -305,7 +335,7 @@
     }
 
     .section-heading p {
-      color: var(--muted);
+      color: var(--text-muted);
       max-width: 750px;
       margin: auto;
       font-size: 17px;
@@ -315,9 +345,7 @@
       width: 32px;
       height: 32px;
       object-fit: contain;
-      filter: invert(76%) sepia(20%)
-        saturate(1128%) hue-rotate(197deg)
-        brightness(104%) contrast(98%);
+      filter: var(--icon-filter);
     }
 
     /* Studios */
@@ -329,7 +357,7 @@
     }
 
     .card {
-      background: var(--card);
+      background: var(--surface);
       border: 2px solid var(--border);
       border-radius: 16px;
       padding: 32px;
@@ -337,7 +365,7 @@
     }
 
     .card:hover {
-      border-color: #818cf8;
+      border-color: var(--accent-subtle-border);
       transform: translateY(-3px);
     }
 
@@ -347,7 +375,7 @@
     }
 
     .card p {
-      color: var(--secondary);
+      color: var(--text-secondary);
       font-size: 17px;
       line-height: 1.7;
       margin: 0;
@@ -363,7 +391,7 @@
 
     .feature {
       padding: 24px;
-      background: var(--card);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
     }
@@ -374,7 +402,7 @@
     }
 
     .feature p {
-      color: var(--secondary);
+      color: var(--text-secondary);
       margin: 0;
       font-size: 16px;
       line-height: 1.7;
@@ -389,14 +417,14 @@
     }
 
     .step {
-      background: var(--card);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 14px;
       padding: 30px;
     }
 
     .step-number {
-      color: var(--lavender);
+      color: var(--accent);
       font-size: 42px;
       font-weight: 800;
     }
@@ -407,7 +435,7 @@
     }
 
     .step p {
-      color: var(--secondary);
+      color: var(--text-secondary);
       margin: 0;
       font-size: 16px;
     }
@@ -422,7 +450,7 @@
     }
 
     details {
-      background: var(--card);
+      background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 22px 26px;
@@ -435,7 +463,7 @@
     }
 
     details p {
-      color: var(--secondary);
+      color: var(--text-secondary);
       margin: 15px 0 0;
       font-size: 16px;
       line-height: 1.7;
@@ -449,8 +477,8 @@
 
     .cta-card {
       padding: 65px 30px;
-      background: #252344;
-      border: 2px solid #818cf8;
+      background: linear-gradient(100deg, var(--highlight-start), var(--highlight-end));
+      border: 1px solid var(--highlight-border);
       border-radius: 16px;
       text-align: center;
     }
@@ -461,7 +489,7 @@
     }
 
     .cta p {
-      color: var(--secondary);
+      color: var(--text-secondary);
       margin: 0 auto 30px;
       max-width: 650px;
       font-size: 18px;
@@ -481,7 +509,7 @@
       flex-wrap: wrap;
       padding-top: 20px;
       border-top: 1px solid var(--border);
-      color: var(--muted);
+      color: var(--text-muted);
       font-size: 14px;
     }
 
@@ -492,7 +520,7 @@
     }
 
     .footer-links a:hover {
-      color: var(--lavender);
+      color: var(--accent);
     }
 
     /* Responsive */
@@ -662,15 +690,15 @@
           <path d="m8 17-5-5 5-5"></path>
           <path d="m16 7 5 5-5 5"></path>
         </svg>
-        BuiltByBuzz
+        BuiltBy<span class="brand-accent">Buzz</span>
       </a>
 
       <div class="nav-links">
         <a href="/">Home</a>
-        <a href="#studios">Studios</a>
+        <a href="#studios" class="active-link">Studios</a>
         <a href="#features">Features</a>
         <a href="#faq">FAQ</a>
-        <a href="/hosting" class="active-link">Hosting</a>
+        <a href="/hosting">Hosting</a>
       </div>
 
     </nav>

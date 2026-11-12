@@ -9,6 +9,7 @@
   <title>Affordable Website Hosting | BuiltByBuzz</title>
   <meta name="description" content="BuiltByBuzz Hosting is coming soon! Affordable static website hosting for HTML, CSS, and JavaScript, with HTTPS and free subdomains starting at $10/year." />
   <meta name="author" content="Buzz" />
+  <meta name="theme-color" content="#0d111b" />
 
   <meta property="og:title" content="Affordable Website Hosting | BuiltByBuzz" />
   <meta property="og:description" content="BuiltByBuzz Hosting is coming soon! Affordable static website hosting for HTML, CSS, and JavaScript, with HTTPS and free subdomains starting at $10/year." />
@@ -19,6 +20,33 @@
   <meta name="twitter:card" content="summary" />
 
   <style>
+    :root {
+      --bg: #0d111b;
+      --surface: #171f2d;
+      --surface-button: #1b2432;
+      --surface-button-hover: #253246;
+      --surface-accent: #342e24;
+      --text: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #7d8ba0;
+      --text-button: #dbe2eb;
+      --accent: #e6af45;
+      --accent-hover: #f2bf60;
+      --accent-border: #f0c062;
+      --accent-text: #edc16b;
+      --accent-foreground: #231c12;
+      --accent-subtle-border: #5b4627;
+      --border: #2b3546;
+      --border-button: #354154;
+      --highlight-start: #252722;
+      --highlight-end: #19222c;
+      --highlight-border: #414036;
+      --step-bg: #393426;
+      --checkmark: #6ee7b7;
+      --focus: #e6af45;
+      --preview-shadow: 0 25px 80px rgb(0 0 0 / 0.4);
+    }
+
     * {
       box-sizing: border-box;
     }
@@ -29,8 +57,8 @@
 
     body {
       margin: 0;
-      background: #111827;
-      color: white;
+      background: var(--bg);
+      color: var(--text);
       font-family: system-ui, sans-serif;
     }
 
@@ -55,7 +83,7 @@
     }
 
     a:focus-visible {
-      outline: 3px solid #a5b4fc;
+      outline: 3px solid var(--focus);
       outline-offset: 3px;
     }
 
@@ -66,13 +94,17 @@
       top: 2px;
       width: 143px;
       height: 49px;
-      color: #ffffff;
+      color: var(--text);
       font: 700 16px Arial, sans-serif;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 8px;
       text-decoration: none;
+    }
+
+    .brand-accent {
+      color: var(--accent);
     }
 
     .nav-active {
@@ -82,8 +114,9 @@
       top: 2px;
       width: 90px;
       height: 45px;
-      color: #dbeafe;
-      background: #29334a;
+      color: var(--accent-text);
+      background: var(--surface-accent);
+      box-shadow: inset 2px 0 var(--accent);
       font: 700 16px Arial, sans-serif;
       border-radius: 8px;
       display: flex;
@@ -99,8 +132,9 @@
       width: 143px;
       height: 39px;
       padding: 10px;
-      color: #c7d2fe;
-      background: #29334a;
+      color: var(--accent-text);
+      background: var(--surface-accent);
+      border: 1px solid var(--accent-subtle-border);
       font: 700 12px Arial, sans-serif;
       border-radius: 24px;
       display: flex;
@@ -114,7 +148,7 @@
       top: 57px;
       width: 1000px;
       height: 2px;
-      background: #94a3b8;
+      background: var(--border);
     }
 
     .hero-title {
@@ -125,7 +159,7 @@
       height: 61px;
       padding: 12px;
       margin: 0;
-      color: #ffffff;
+      color: var(--text);
       font: 700 35px/1.2 Arial, sans-serif;
       text-align: center;
     }
@@ -138,7 +172,7 @@
       height: 45px;
       padding: 12px;
       margin: 0;
-      color: #b7c2d6;
+      color: var(--text-secondary);
       font: 400 16px/1.5 Arial, sans-serif;
       text-align: center;
     }
@@ -149,8 +183,9 @@
       width: 135px;
       height: 54px;
       padding: 12px;
-      color: #ffffff;
-      background: #6366f1;
+      color: var(--accent-foreground);
+      background: var(--accent);
+      border: 1px solid var(--accent-border);
       border-radius: 8px;
       font: 700 16px Arial, sans-serif;
       text-decoration: none;
@@ -162,16 +197,17 @@
     }
 
     .hero-button:hover {
-      background: #4f46e5;
+      background: var(--accent-hover);
     }
 
     .hero-button.secondary {
-      background: #526078;
-      color: #e2e8f0;
+      background: var(--surface-button);
+      color: var(--text-button);
+      border: 1px solid var(--border-button);
     }
 
     .hero-button.secondary:hover {
-      background: #64748b;
+      background: var(--surface-button-hover);
     }
 
     .pricing-title {
@@ -182,7 +218,7 @@
       height: 54px;
       padding: 12px;
       margin: 0;
-      color: #ffffff;
+      color: var(--text);
       font: 700 22px/1.5 Arial, sans-serif;
       text-align: center;
     }
@@ -195,7 +231,7 @@
       height: 41px;
       padding: 12px;
       margin: 0;
-      color: #9caac1;
+      color: var(--text-muted);
       font: 400 13px/1.5 Arial, sans-serif;
       text-align: center;
     }
@@ -206,9 +242,9 @@
       width: 457px;
       height: 292px;
       padding: 12px;
-      background: #1d293d;
-      color: #c7d2fe;
-      border: 2px solid #36445e;
+      background: var(--surface);
+      color: var(--text);
+      border: 2px solid var(--border);
       border-radius: 16px;
       font-family: Arial, sans-serif;
       display: flex;
@@ -217,12 +253,12 @@
     }
 
     .pricing-card.lifetime {
-      background: #252344;
-      border-color: #818cf8;
+      background: var(--surface-accent);
+      border-color: var(--accent-border);
     }
 
     .plan-name {
-      color: #becbea;
+      color: var(--text-button);
       font-size: 14px;
       font-weight: 700;
     }
@@ -236,11 +272,11 @@
     .plan-period {
       font-size: 10px;
       font-weight: 400;
-      color: #b8c5db;
+      color: var(--text-secondary);
     }
 
     .plan-divider {
-      border-top: 1px solid #3a4963;
+      border-top: 1px solid var(--border);
       margin: 6px 0;
     }
 
@@ -262,14 +298,15 @@
     }
 
     .checkmark {
-      color: #6ee7b7;
+      color: var(--checkmark);
     }
 
     .plan-button {
       margin-top: auto;
       flex-shrink: 0;
-      background: #34435f;
-      color: #c7d2fe;
+      background: var(--surface-button);
+      color: var(--text-button);
+      border: 1px solid var(--border-button);
       border-radius: 6px;
       padding: 9px 12px;
       font-size: 11px;
@@ -280,7 +317,7 @@
     }
 
     .plan-button:hover {
-      background: #465779;
+      background: var(--surface-button-hover);
     }
 
     .steps-card {
@@ -290,8 +327,8 @@
       width: 982px;
       height: 276px;
       padding: 12px;
-      color: #c7d2fe;
-      background: #1d293d;
+      color: var(--text);
+      background: var(--surface);
       border-radius: 12px;
       font: 700 16px Arial, sans-serif;
     }
@@ -326,8 +363,8 @@
       height: 32px;
       padding: 0 4px;
       border-radius: 9px;
-      background: #37335c;
-      color: #bec8f5;
+      background: var(--step-bg);
+      color: var(--accent-text);
       font-size: 12px;
     }
 
@@ -343,7 +380,7 @@
 
     .step-content p {
       margin: 6px 0 0;
-      color: #aab8d0;
+      color: var(--text-secondary);
       font-size: 12px;
       font-weight: 400;
       line-height: 1.4;
@@ -355,7 +392,8 @@
       top: 1013px;
       width: 982px;
       height: 258px;
-      background: #252344;
+      background: linear-gradient(100deg, var(--highlight-start), var(--highlight-end));
+      border: 1px solid var(--highlight-border);
       border-radius: 16px;
     }
 
@@ -365,7 +403,7 @@
       top: 1024px;
       width: 51px;
       height: 45px;
-      color: #a5b4fc;
+      color: var(--accent);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -379,7 +417,7 @@
       height: 48px;
       padding: 12px;
       margin: 0;
-      color: #ffffff;
+      color: var(--text);
       font: 700 19px/1.5 Arial, sans-serif;
       text-align: center;
     }
@@ -392,7 +430,7 @@
       height: 45px;
       padding: 12px;
       margin: 0;
-      color: #b7c2d6;
+      color: var(--text-secondary);
       font: 400 16px/1.5 Arial, sans-serif;
       text-align: center;
     }
@@ -404,8 +442,9 @@
       width: 187px;
       height: 47px;
       padding: 12px;
-      background: #6366f1;
-      color: #ffffff;
+      background: var(--accent);
+      color: var(--accent-foreground);
+      border: 1px solid var(--accent-border);
       border-radius: 8px;
       font: 400 16px Arial, sans-serif;
       text-decoration: none;
@@ -417,7 +456,7 @@
     }
 
     .cta-button:hover {
-      background: #4f46e5;
+      background: var(--accent-hover);
     }
 
     .footer-text {
@@ -428,7 +467,7 @@
       height: 37px;
       padding: 12px;
       margin: 0;
-      color: #8492aa;
+      color: var(--text-muted);
       font: 400 12px/1.5 Arial, sans-serif;
       text-align: center;
     }
@@ -439,7 +478,7 @@
       width: 145px;
       height: 39px;
       padding: 12px;
-      color: #8492aa;
+      color: var(--text-muted);
       font: 400 13px Arial, sans-serif;
       text-decoration: none;
       border-radius: 8px;
@@ -449,7 +488,7 @@
     }
 
     .footer-link:hover {
-      color: #ffffff;
+      color: var(--accent);
     }
 
     .lucide-icon {
@@ -499,13 +538,13 @@
 
 <body>
 
-  <section style="background:#111827">
+  <section style="background:var(--bg)">
     <div class="onyx-section" style="height:1340px">
 
       <!-- HEADER -->
       <a class="brand" href="/">
         <span class="lucide-icon icon-code" aria-hidden="true"></span>
-        BuiltByBuzz
+        BuiltBy<span class="brand-accent">Buzz</span>
       </a>
 
       <div class="nav-active">Hosting</div>
